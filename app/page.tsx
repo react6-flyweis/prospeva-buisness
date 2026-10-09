@@ -2983,7 +2983,17 @@ function FinancialOperations({ data, notify, setAction }: any) {
   );
 }
 
-function Billing({ role, data, notify, setAction }: any) {
+function Billing({
+  role,
+  data,
+  notify,
+  setAction,
+}: {
+  role: Role;
+  data: any;
+  notify: any;
+  setAction: any;
+}) {
   const billingType: Record<Role, string> = {
     Merchant: "Sales invoices",
     Lender: "Repayment schedules",
@@ -3749,7 +3759,17 @@ function NotificationCenter({ notify }: any) {
   );
 }
 
-function ProspevaAI({ role, data, notify, setAction }: any) {
+function ProspevaAI({
+  role,
+  data,
+  notify,
+  setAction,
+}: {
+  role: Role;
+  data: any;
+  notify: any;
+  setAction: any;
+}) {
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Array<{ question: string; answer: string; evidence: string[]; next: string[] }>>([]);
   const intelligence: Record<Role, { title: string; brief: string; prompts: string[]; skills: string[] }> = {
@@ -3850,7 +3870,15 @@ function ProspevaAI({ role, data, notify, setAction }: any) {
   );
 }
 
-function PeopleAccounts({ role, data, setAction }: any) {
+function PeopleAccounts({
+  role,
+  data,
+  setAction,
+}: {
+  role: Role;
+  data: any;
+  setAction: any;
+}) {
   const directory: Record<Role, string[][]> = {
     Merchant: [["Kelvin Freeman","Customer","CUS-10482","Verified"],["Martha Kallon","Repeat buyer","CUS-10483","Verified"],["James Doe","Pay-on-account customer","CUS-10484","Review"]],
     Lender: [["Martha Kallon","Borrower","BOR-20482","Active"],["Samuel Toe","Applicant","APP-20483","Review"],["Stop & Shop","Employer relationship","ORG-2081","Verified"]],
@@ -3880,7 +3908,17 @@ function PeopleAccounts({ role, data, setAction }: any) {
   </section>;
 }
 
-function ReportsCenter({ role, data, notify, setAction }: any) {
+function ReportsCenter({
+  role,
+  data,
+  notify,
+  setAction,
+}: {
+  role: Role;
+  data: any;
+  notify: any;
+  setAction: any;
+}) {
   const reportLabels: Record<Role, string[]> = {
     Merchant: ["Sales & refunds", "Settlement summary", "Merchant financing requests", "Fees & contribution", "Customer activity"],
     Lender: ["Merchant financing portfolio", "Portfolio performance", "Repayment collections", "Delinquency", "Employer channels"],
@@ -3937,7 +3975,21 @@ function ReportsCenter({ role, data, notify, setAction }: any) {
   );
 }
 
-function RoleModulePage({ role, data, moduleName, navigate, notify, setAction }: any) {
+function RoleModulePage({
+  role,
+  data,
+  moduleName,
+  navigate,
+  notify,
+  setAction,
+}: {
+  role: Role;
+  data: any;
+  moduleName: string;
+  navigate: any;
+  notify: any;
+  setAction: any;
+}) {
   const module = roleWorkspaces[role].find(([name]) => name === moduleName);
   if (!module) {
     return (
